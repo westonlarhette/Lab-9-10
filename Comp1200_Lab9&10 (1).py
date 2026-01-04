@@ -9,68 +9,68 @@ Created on Mon Apr  8 13:34:18 2024
 
 """More on histograms"""
 # =============================================================================
-# import numpy as np
-# import matplotlib.pyplot as plt
-# from numpy.random import random as rng
-# 
-# data = rng(1000)
-# 
-# counts, bin_edges, _ = plt.hist(data)
-# #counts, bin_edges = np.histogram(data)
-# 
-# bin_size = bin_edges[1] - bin_edges[0]
-# new_widths = bin_size * counts / counts.max()
-# 
-# plt.figure()
-# plt.bar(bin_edges[:-1], counts, width=new_widths, color=['r','g','b','y'])
-# 
+import numpy as np
+import matplotlib.pyplot as plt
+from numpy.random import random as rng
+
+data = rng(1000)
+
+counts, bin_edges, _ = plt.hist(data)
+#counts, bin_edges = np.histogram(data)
+
+bin_size = bin_edges[1] - bin_edges[0]
+new_widths = bin_size * counts / counts.max()
+
+plt.figure()
+plt.bar(bin_edges[:-1], counts, width=new_widths, color=['r','g','b','y'])
+
 # =============================================================================
 
 """ Contour plots, Surface plots and heat maps"""
 # =============================================================================
-# import numpy as np
-# import matplotlib.pyplot as plt
-# 
-# # Create grid of x and y coordinates
-# 
-# x_vals = np.linspace(-1,1,200)
-# y_vals = np.linspace(-1,1,200)
-# X, Y = np.meshgrid(x_vals,y_vals)
-# 
-# # Generate function values
-# 
-# Z = np.cos(X) * np.sin(Y)
-# 
-# R = X**2 + Y**2
-# 
-# # Plot contours
-# plt.contour(X,Y,R)
-# plt.show()
-# 
-# plt.contour(X,Y,Z)
-# plt.show()
-# 
-# #Plot and label contours.
-# plt.figure()
-# cs = plt.contour(X,Y,Z,10,linewidths=3,colors='r')
-# plt.clabel(cs,fontsize=10)
-# plt.show()
-# 
-# 
-# from mpl_toolkits.mplot3d import Axes3D # Import 3D plotting tool
-# # Plot surfaces
-# ax1 = plt.axes(projection = '3d')
-# ax1.plot_surface(X,Y,R)
-# plt.show()
-# 
-# ax3 = plt.axes(projection='3d')
-# ax3.plot_surface(X,Y,R, rcount = 200, ccount = 200)
-# plt.show()
-# 
-# plt.pcolormesh(X,Y,R)
-# plt.show()
-# 
-# plt.pcolormesh(X,Y,R,cmap='jet')
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create grid of x and y coordinates
+
+x_vals = np.linspace(-1,1,200)
+y_vals = np.linspace(-1,1,200)
+X, Y = np.meshgrid(x_vals,y_vals)
+
+# Generate function values
+
+Z = np.cos(X) * np.sin(Y)
+
+R = X**2 + Y**2
+
+# Plot contours
+plt.contour(X,Y,R)
+plt.show()
+
+plt.contour(X,Y,Z)
+plt.show()
+
+#Plot and label contours.
+plt.figure()
+cs = plt.contour(X,Y,Z,10,linewidths=3,colors='r')
+plt.clabel(cs,fontsize=10)
+plt.show()
+
+
+from mpl_toolkits.mplot3d import Axes3D # Import 3D plotting tool
+# Plot surfaces
+ax1 = plt.axes(projection = '3d')
+ax1.plot_surface(X,Y,R)
+plt.show()
+
+ax3 = plt.axes(projection='3d')
+ax3.plot_surface(X,Y,R, rcount = 200, ccount = 200)
+plt.show()
+
+plt.pcolormesh(X,Y,R)
+plt.show()
+
+plt.pcolormesh(X,Y,R,cmap='jet')
 # =============================================================================
 
 
